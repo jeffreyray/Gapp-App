@@ -1,0 +1,12 @@
+CHANGES
+Gapp-App.komodoproject
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+dist.ini
+lib/Gapp/App.pm
+lib/Gapp/App/Debug.pm
+lib/Gapp/Widget/Trait/HasApp.pm
+t/001_debug.pl
