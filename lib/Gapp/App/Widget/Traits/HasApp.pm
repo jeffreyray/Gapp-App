@@ -1,4 +1,4 @@
-package Gapp::App::Widget::Trait::HasApp;
+package Gapp::App::Widget::Traits::HasApp;
 
 use Moose::Role;
 use MooseX::SemiAffordanceAccessor;
