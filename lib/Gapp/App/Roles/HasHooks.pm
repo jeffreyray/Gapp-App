@@ -6,7 +6,7 @@ use MooseX::StrictConstructor;
 
 use MooseX::Types::Moose qw( Str Object );
 
-has 'hooks' => (
+has '_hooks' => (
     is => 'ro',
     isa => 'HashRef',
     default => sub { { } },
@@ -106,7 +106,7 @@ Gapp::App::Roles::HasHooks - Role for app with hooks
 =head1 DESCRIPTION
 
 Hooks are named callbacks points in your application. Hooks can be used to
-add plugin functionality to your application.
+add plugin functionality.
 
 =head1 PROVIDED ATTRIBUTES
 
