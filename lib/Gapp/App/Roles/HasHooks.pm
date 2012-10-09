@@ -4,6 +4,8 @@ use Moose::Role;
 use MooseX::SemiAffordanceAccessor;
 use MooseX::StrictConstructor;
 
+use Gapp::App::Hook;
+
 use MooseX::Types::Moose qw( Str Object );
 
 has '_hooks' => (
@@ -42,10 +44,10 @@ sub register_hook {
     
     # if is a string, create a new hook
     if ( is_Str( $hook ) ) {
-        $self->_hooks->{$hook} = Gapp::App::Plugin::Hook->new( name => $hook, %opts );
+        $hook = $self->_hooks->{$hook} = Gapp::App::Hook->new( name => $hook, %opts );
     }
     # if is a hook object, just add it to the registry
-    if ( is_Object( $hook ) ) {
+    elsif ( is_Object( $hook ) ) {
         $self->_hooks->{$hook->name} = $hook;
     }
     # if not a string or hook, die
@@ -53,7 +55,7 @@ sub register_hook {
         $self->meta->throw_error( qq[could not register hook $hook, not a string or Gapp::App::Plugin::Hook] );
     }
    
-    return;
+    return $hook;
 }
 
 

@@ -1,4 +1,4 @@
-package Gapp::App::Hook;
+package Que::App::Hook;
 
 use Moose;
 use MooseX::StrictConstructor;
