@@ -23,7 +23,7 @@ sub call_hook {
     my $hook = $self->_hooks->{$hook_name};
     return if ! $hook;
     
-    $hook->call( @params );
+    $hook->call( $self, @params );
 }
 
 

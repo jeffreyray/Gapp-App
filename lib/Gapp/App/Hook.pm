@@ -39,17 +39,17 @@ has 'name' => (
 
 
 sub call {
-    my ( $self, @params ) = @_;
+    my ( $self, $app, @params ) = @_;
     
     my @results;
     for my $cb ( $self->callbacks ) {
         my ( $code, $data ) = @$cb;
         
-        push @results, $code->(\@params, $data );
+        push @results, $code->($app, \@params, $data );
     }
     
     if ( $self->closure ) {
-        @results = $self->closure->( $self, \@params, \@results );
+        @results = $self->closure->( $self, $app, \@params, \@results );
     }
     
     return @results;
