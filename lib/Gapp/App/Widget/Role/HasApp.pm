@@ -1,4 +1,4 @@
-package Gapp::App::Roles::HasApp;
+package Gapp::App::Widget::Role::HasApp;
 
 use Moose::Role;
 use MooseX::SemiAffordanceAccessor;
@@ -19,7 +19,7 @@ __END__
 
 =head1 NAME
 
-Gapp::App::Roles::HasApp - Provides app attribute
+Gapp::App::Widget::Role::HasApp - Provides app attribute
 
 =head1 DESCRIPTION
 

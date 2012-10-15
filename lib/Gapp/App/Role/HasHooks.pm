@@ -1,4 +1,4 @@
-package Gapp::App::Roles::HasHooks;
+package Gapp::App::Role::HasHooks;
 
 use Moose::Role;
 use MooseX::SemiAffordanceAccessor;
@@ -69,7 +69,7 @@ __END__
 
 =head1 NAME
 
-Gapp::App::Roles::HasHooks - Role for app with hooks
+Gapp::App::Role::HasHooks - Role for app with hooks
 
 =head1 SYNOPSIS
 
@@ -79,7 +79,7 @@ Gapp::App::Roles::HasHooks - Role for app with hooks
 
   extends 'Gapp::App';
 
-  with 'Gapp::App::Roles::HasHooks';
+  with 'Gapp::App::Role::HasHooks';
 
   sub BUILD {
 

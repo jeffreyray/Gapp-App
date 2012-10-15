@@ -4,7 +4,7 @@ use Moose;
 use MooseX::StrictConstructor;
 use MooseX::SemiAffordanceAccessor;
 
-#with 'Gapp::App::Roles::HasApp';
+#with 'Gapp::App::Role::HasApp';
 
 has 'action' => (
     is => 'rw',

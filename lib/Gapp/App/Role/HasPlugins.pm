@@ -1,4 +1,4 @@
-package Gapp::App::Roles::HasComponents;
+package Gapp::App::Role::HasPlugins;
 
 use Moose::Role;
 use MooseX::SemiAffordanceAccessor;
@@ -8,30 +8,30 @@ use Gapp::App::Hook;
 
 use MooseX::Types::Moose qw( Str Object );
 
-has '_components' => (
+has '_plugins' => (
     is => 'ro',
     isa => 'HashRef',
     traits => [qw( Hash )],
     default => sub { { } },
     handles => {
-        com => 'get',
+        plg => 'get',
     },
     lazy => 1,
 );
 
 
-sub register_component {
-    my ( $self, $name, $com ) = @_;
+sub register_plugin {
+    my ( $self, $name, $plg ) = @_;
     
-    $self->meta->throw_error( 'usage $app->register_component( $name, $com )' ) if ! $name || ! $com;
+    $self->meta->throw_error( 'usage $app->register_plugin( $name, $com )' ) if ! $name || ! $plg;
     
-    $com->set_app( $self );
+    $plg->set_app( $self );
     
-    $com->register;
+    $plg->register;
     
-    $self->_components->{ $name } = $com;
+    $self->_plugins->{ $name } = $plg;
     
-    return $com;
+    return $plg;
 }
 
 
@@ -43,7 +43,7 @@ __END__
 
 =head1 NAME
 
-Gapp::App::Roles::HasComponents - Role for app with components
+Gapp::App::Role::HasComponents - Role for app with components
 
 =head1 SYNOPSIS
 
@@ -53,7 +53,7 @@ Gapp::App::Roles::HasComponents - Role for app with components
 
   extends 'Gapp::App';
 
-  with 'Gapp::App::Roles::HasComponents';
+  with 'Gapp::App::Role::HasComponents';
 
   sub BUILD {
 

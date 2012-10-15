@@ -1,4 +1,4 @@
-package Gapp::App::Component;
+package Gapp::App::Plugin;
 
 use Moose;
 use MooseX::StrictConstructor;
