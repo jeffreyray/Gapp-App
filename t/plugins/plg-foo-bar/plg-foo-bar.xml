@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension>
+	
+<id>plg-foo-bar</id>
+
+<name>Foo-Bar</name>
+
+<class>App::Plugin::Foo::Bar</class>
+
+<creation_date>Nov 2012</creation_date>
+
+<version>1.0</version>
+
+<author>Jeffrey Ray</author>
+
+<author_email>emaven.ws@gmail.com</author_email>
+
+<author_url>http://emaven.ws</author_url>
+
+<copyright>Copyright (C) 2012 Jeffrey Ray</copyright>
+
+<description>Foo-Bar plugin.</description>
+
+<license>The Artistic License 2.0 (GPL Compatible)</license>
+
+<files>
+	<filename>icon.png</filename>
+</files>
+
+<files folder="lib">
+
+</files>
+
+</extension>
